@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Inbox{% endblock %}
+
+{% block headline %}{% endblock %}
+
+{% block content %}
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+    <div class="alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+    
+    <button><a href="{{ url_for('list_users') }}">Nytt</a></button>
+    <table class="table table-striped">
+        <thead>
+            <tr> 
+                <th scope="col">Namn</th>
+                <th scope="col">Rubrik</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for message in messages %}
+                    <tr>
+                        <td><a href="{{ url_for('read_email', id=message[0] )}}">{{ message[1] }}</a></td>
+                        <td><a href="{{ url_for('read_email', id=message[0]) }}">{{ message[3] }}</a></td>
+                        <td>{{ message[5] }}</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

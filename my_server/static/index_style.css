@@ -1,0 +1,120 @@
+.menu {
+    text-align: left;
+}
+
+.brand_icon {
+    margin-top: 6px;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.avatar {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#grid {
+    display: grid;
+    height: auto;
+    grid-template-areas: "img1  img2    img3"
+                        "sec1   sec2    sec3"
+                        "img4   img5    img6"
+                        "sec4   sec5    sec6";
+}
+
+.privacy, .end_to_end, .source {
+    height: 100px;
+}
+
+.privacy {
+    grid-area: img1;
+    margin-left: 175px;
+}
+
+.end_to_end {
+    grid-area: img2;
+    margin-left: 15px;
+}
+
+.key {
+    grid-area: img3;
+    margin-top: 5px;
+    height: 80px;
+}
+
+.source {
+    grid-area: img4;
+    margin-left: 200px;
+}
+
+.idea {
+    grid-area: img5;
+    margin: 10px 0 0 30px;
+    height: 80px;
+}
+
+.calendar {
+    grid-area: img6;
+    margin-top: 20px;
+    height: 70px;
+}
+
+#sec1, #sec4 {
+    margin-left: 200px
+}
+
+#sec3, #sec6 {
+    margin-right: 200px;
+}
+
+#sec2, #sec5 {
+    margin: 0 30px 30px 30px;
+}
+
+#sec1 {
+    grid-area: sec1;
+}
+
+#sec2 {
+    grid-area: sec2;
+}
+
+#sec3 {
+    grid-area: sec3;
+}
+
+#sec4 {
+    grid-area: sec4;
+}
+
+#sec5 {
+    grid-area: sec5;
+}
+
+#sec6 {
+    grid-area: sec6;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+.li_footer {
+    float: left;
+    margin-left: 3%;
+}
+
+.ul_footer {
+    margin-left: 35%;
+    padding: 0;
+    list-style-type: none;
+}

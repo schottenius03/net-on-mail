@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Hjälp{% endblock %}
+
+{% block headline %}{% endblock %}
+
+{% block content %}
+	<p>Tyvärr kan inga åtgärder göras inom snarast framtid.</p>
+	<button><a href="{{url_for('login')}}">Tillbaka</a></button>
+{% endblock %}

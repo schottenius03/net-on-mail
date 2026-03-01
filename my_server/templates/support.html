@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Support{% endblock %}
+
+{% block headline %}{% endblock %}
+
+{% block content %}
+	<p>Tyvärr kan inga åtgärder göras inom snarast framtid.</p>
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+	<button><a href="{{url_for('login')}}">Tillbaka</a></button>
+{% endblock %}

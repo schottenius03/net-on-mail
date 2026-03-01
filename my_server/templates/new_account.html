@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Logga in{% endblock %}
+
+{% block headline %}{% endblock %}
+
+{% block content %}
+    <form action = "{{ url_for('new_account')}}" method = "post">
+        <section class="form_new_account">
+            <h3>Skapa ett NetOn-konto</h3>
+                <p><input type = "text" name = "name" placeholder="Namn" autocomplete="off"/></p>
+                <p><input type = "text" name = "surname" placeholder="Efternamn" autocomplete="off"/></p>
+                <p><input type = "text" name = "username" placeholder="Användarnamn" autocomplete="off"/></p>
+                <p><input type = "password" name = "password" placeholder="Lösenord"/></p>
+                <p><input type = "password" name = "password2" placeholder="Upprepa lösenord"/></p>
+                <a href="{{url_for('login')}}">Logga in istället</a>
+                <p><input type = "submit" value = "Skapa"/></p>
+        </section>
+    </form>
+
+    <div>
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endblock %}

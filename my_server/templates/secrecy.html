@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='secrecy_style.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Sekretess</title>
+    </head>
+    <body>
+        <section id="headline">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="brand_icon">
+                    <a class="navbar-brand" href="{{ url_for('start')}}">
+                      <img class="icon" src="static/images/icon.png">
+                      NetOnMail
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{{ url_for('news')}}">Nyheter<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ url_for('secrecy')}}">Sekretess</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ url_for('about')}}">Om</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('support')}}">Support</a>
+                          </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Konto
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            {% if session['logged_in'] == True %}
+                              <a class="dropdown-item" href="{{ url_for('my_account')}}">Min profil</a>
+                              <a class="dropdown-item" href="{{ url_for('inbox')}}">Inkorg</a>
+                              <a class="dropdown-item" href="{{ url_for('logout')}}">Logga ut</a>
+                            {% else %}
+                              <a class="dropdown-item" href="{{ url_for('login')}}">Logga in</a>
+                              <a class="dropdown-item" href="{{ url_for('new_account')}}">Nytt konto</a>
+                            {% endif %}
+                          </div>
+                        </li>
+                      </ul>
+                </div>
+            </nav>
+
+            <div id="grid">
+              <img src="#" class="img1">
+              <img src="#" class="img2">
+              <img src="#" class="img3">
+              <img src="#" class="img4">
+              
+              <section id="sec1">
+                <h4>End-to-end-kryptering</h4>
+                <h5>Meddelanden är alltid krypterade</h5>
+                <p>Meddelanden lagras på NetOnMail-servrar i krypterat format. De överförs också i krypterat format mellan våra servrar och användarenheter. Meddelanden mellan NetOnMail-användare överförs också i krypterad form inom vårt säkra servernätverk. Eftersom data är krypterad i alla steg är risken för meddelandeavlyssning i stort sett eliminerad.</p>
+              </section>
+              <section id="sec2">
+                <h4>Noll åtkomst till användardata</h4>
+                <h5>Din krypterade data är inte tillgänglig för oss</h5>
+                <p>NetOnMails nollåtkomstarkitektur gör att din data krypteras på ett sätt som gör den otillgänglig för oss. Data krypteras på klientsidan med en krypteringsnyckel som vi inte har tillgång till. Detta innebär att vi inte har den tekniska förmågan att dekryptera dina meddelanden, och som ett resultat kan vi inte lämna över dina uppgifter till tredje part. Med NetOnMail är integritet inte bara ett löfte, det är matematiskt säkerställt. Av denna anledning kan vi inte heller göra dataåterställning. Om du glömmer ditt lösenord kan vi inte återställa dina uppgifter.</p>
+              </section>
+              <img>
+              <section id="sec3">
+                <h4>Säkerhet på hårdvarunivå</h4>
+                <h5>Full diskkryptering och lagring i säkra datacenter</h5>
+                <p>Vi har investerat mycket i att äga och kontrollera vår egen serverhårdvara så att din data aldrig går till molnet. Våra datacenter finns på mycket säkra platser som kräver biometrisk åtkomst. Detta ger ett extra lager av skydd genom att säkerställa att dina krypterade e-postmeddelanden inte är lättillgängliga för tredje part. På systemnivå använder våra servrar helt krypterade hårddiskar med flera lösenordslager så datasäkerheten bevaras även om vår hårdvara beslagtas.</p>
+              </section>
+              <section id="sec4">
+                <h4>Anonym</h4>
+                <h5>Ingen spårning eller loggning av personligt indentifierbar information</h5>
+                <p>Till skillnad från konkurrerande e-posttjänster spårar vi dig inte. Eftersom vi inte har något sätt att läsa krypterade e-postmeddelanden, erbjuder vi inte heller riktade annonser eller bygger profiler med dina personuppgifter. För extra sekretess för användare i känsliga yrken (journalister eller aktivister) tillhandahåller vi även en anonym e-postgateway.</p>
+              </section>
+            </div>
+
+            <footer>
+              <div>
+                  <ul class="ul_footer">
+                      <li class="li_footer"><a href="{{ url_for('help')}}">Hjälp</a></li>
+                      <li class="li_footer"><a href="{{ url_for('cookies')}}">Cookies</a></li>
+                      <li class="li_footer"><a href="{{ url_for('secrecy')}}">Sekretess</a></li>
+                      <li class="li_footer"><a href="{{ url_for('terms_of_use')}}">Användarvillkor</a></li>
+                  </ul>
+              </div>
+          </footer>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

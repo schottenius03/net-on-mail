@@ -1,0 +1,82 @@
+.menu {
+    text-align: left;
+}
+
+.brand_icon {
+    margin-top: 6px;
+}
+
+.icon {
+    height: 60px;
+    width: 60px;
+}
+
+.avatar {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#grid {
+    display: grid;
+    height: auto;
+    grid-template-areas: "sec1  img1"
+                        "sec2   img2"
+                        "sec3   img3"
+                        "sec4   img4";
+}
+
+#sec1, #sec2, #sec3, #sec4 {
+    margin: 70px 10px 10px 40px;
+}
+
+#sec1 {
+    grid-area: sec1;
+}
+
+#sec2 {
+    grid-area: sec2;
+}
+
+#sec3 {
+    grid-area: sec3;
+}
+
+#sec4 {
+    grid-area: sec4;
+}
+
+.img1 {
+    grid-area: img1;
+}
+
+.img2 {
+    grid-area: img2;
+}
+
+.img3 {
+    grid-area: img3;
+}
+
+.img4 {
+    grid-area: img4;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+}
+
+.li_footer {
+    float: left;
+    margin-left: 3%;
+}
+
+.ul_footer {
+    margin-left: 35%;
+    padding: 0;
+    list-style-type: none;
+}

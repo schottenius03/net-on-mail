@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Account{% endblock %}
+
+{% block headline %}{% endblock %}
+
+{% block content %}
+	<p id="profile"><img src="static/images/avatar.png" alt="Avatar" class="avatar">{{users[3]}}</p>
+	<p>Namn: {{users[1]}}</p>
+	<p>Efternamn: {{users[2]}}</p>
+	<p>Antal inloggningar: {{users[5]}}</p>
+	<button><a href="{{ url_for('delete_account')}}">Radera konto</a></button>
+	<button id="blogout"><a href="{{ url_for('logout')}}">Logga ut</a></button>
+{% endblock %}

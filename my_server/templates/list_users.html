@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Inbox - {% endblock %}
+
+{% block headline %}{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for user in users %}
+            <a href="{{url_for('new_mail', receiver_id=user[0])}}">{{user[1]}}</a>
+        {% endfor %}
+    </ul> 
+{% endblock %}
